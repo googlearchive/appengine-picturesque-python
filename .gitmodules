@@ -1,0 +1,9 @@
+[submodule "endpoints-proto-datastore"]
+	path = endpoints-proto-datastore
+	url = https://github.com/dhermes/endpoints-proto-datastore
+[submodule "filer.js"]
+	path = filer.js
+	url = https://github.com/ebidel/filer.js
+[submodule "io-2012-slides"]
+	path = io-2012-slides
+	url = https://code.google.com/p/io-2012-slides/

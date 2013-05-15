@@ -1,0 +1,38 @@
+<div data-role="page" id="sharePage" data-theme="b" data-title="Picturesque">
+
+  <div data-role="header">
+    <h1>Share On G+</h1>
+    <a data-role="button" class="ui-btn-right headerBut" href="#mainPage" data-icon="home"
+    data-iconpos="left" data-theme="e">Home</a>
+  </div>
+
+  <div data-role="content">
+    <div class="div-widget" data-role="navbar">
+      <ul>
+        <li>
+          <a id="showGooglePlusPeople" class="btn btn-large" title="Choose friends from G+">
+            Choose Friends</a>
+        </li>
+        <li><a id="shareImage" class="btn btn-large">Share Image</a></li>
+        <li><a id="shareDiv" class="btn btn-large" style="display: none">Send</a></li>
+      </ul>
+    </div>
+
+    <div id="googlePlusPeople" style="display: none">
+      <h2>People from G+</h2>
+      <h3>Click to Select</h3>
+      <div style="border:2px solid gray;"></div>
+    </div>
+
+    <div id="sharePageResults">
+      <!-- TODO: Add chrome logo here too -->
+      <img src="custom-images/cloud_endpoints_logo.png"
+           alt="app icon" height="240" style="display: block; margin: 0 auto; border-radius:20px">
+    </div>
+
+  </div>
+
+  <div data-role="footer">
+    <h1>Google I/O 2013</h1>
+  </div>
+</div>

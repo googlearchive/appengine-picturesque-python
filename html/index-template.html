@@ -1,0 +1,17 @@
+<!--
+Google IO 2013 - Mobile, Web and Cloud - The Triple Crown of Modern Applications
+Authors: Ido Green    - plus.google.com/+GreenIdo
+         Danny Hermas - plus.google.com/+DannyHermas
+-->
+<!DOCTYPE html>
+<html manifest="definition.appcache">
+  <head>
+    {# Thanks to http://stackoverflow.com/questions/10821539 -#}
+    {% macro indent_head() %}{% include 'head.html' %}{% endmacro -%}
+    {{ indent_head()|indent }}
+  </head>
+  <body>
+    {% macro indent_body() %}{% include 'body.html' %}{% endmacro -%}
+    {{ indent_body()|indent }}
+  </body>
+</html>

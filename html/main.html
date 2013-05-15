@@ -1,0 +1,39 @@
+<div data-role="page" id="mainPage" data-theme="b" data-title="Picturesque">
+
+  <div data-role="header" data-position="fixed">
+    <h2>Picturesque!</h2>
+    <button id="connStatus" data-icon="" class="ui-btn-left" data-theme="e">Ready</button>
+    <a href="#" id="reload" data-role="button" class="ui-btn-right headerBut" data-icon="refresh">Reload</a>
+
+  </div>
+
+  <div data-role="content">
+    <div data-role="controlgroup" id="actionGroup">
+      <!-- Need an extra container since Google+ Sign-in -->
+      <!-- overrides CSS on the actual button -->
+      {# Button Rendered in modules.html or on readystatechange -#}
+      <div id="signinButtonContainer">
+        <div id="signinButton"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="centeredPhotos">
+    <div class="row">
+      <div id="picColumnLeft" class="span4 pagination-centered"></div>
+      <div id="picColumnCenter" class="span4 pagination-centered"></div>
+      <div id="picColumnRight" class="span4 pagination-centered"></div>
+    </div>
+  </div>
+
+  <div data-role="footer" data-position="fixed" >
+    <div data-role="navbar" >
+      <ul>
+        <li><a href="#add-update-page" id="favorite" data-icon="plus">Add</a></li>
+        <li><a href="#sharePage" id="sharePageButton" data-icon="forward">Share</a></li>
+        <li><a href="#aboutPage" id="aboutButton" data-icon="info">About</a></li>
+      </ul>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,1083 @@
+<!--
+Google IO 2013 - Mobile, Web and Cloud - The Triple Crown of Modern Applications
+Authors: Ido Green    - plus.google.com/+GreenIdo
+         Danny Hermas - plus.google.com/+DannyHermas
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mobile, Web and Cloud - The Triple Crown of Modern Applications</title>
+  <meta charset="utf-8">
+  <!-- Ya baby! if you have google chrome frame... use it! -->
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <!--This one seems to work all the time, but really small on ipad-->
+  <!--<meta name="viewport" content="initial-scale=0.4">-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" media="all" href="theme/css/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+  <link rel="stylesheet" media="all" href="custom-css/custom.css">
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+</head>
+<body style="opacity: 0" class="weavebg">
+  <slides class="layout-widescreen">
+    <slide class="logoslide nobackground">
+      <article class="flexbox vcenter">
+        <span><img src="images/google_developers_logo.png"></span>
+      </article>
+    </slide>
+
+    <slide class="title-slide segue nobackground">
+      <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+      <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+      <hgroup class="auto-fadein">
+        <h1 data-config-title><!-- populated from slide_config.json --></h1>
+        <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+        <p data-config-presenter><!-- populated from slide_config.json --></p>
+      </hgroup>
+    </slide>
+
+    <slide class="fill nobackground current" style="background-image: url(custom-images/main_app.png)">
+    </slide>
+
+    <slide class="segue dark nobackground">
+      <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+      <hgroup class="auto-fadein">
+        <h2>Cloud and Client</h2>
+        <h3>Are they friends?</h3>
+      </hgroup>
+    </slide>
+
+    <slide class="fill blue segue">
+      <article class="flexbox vcenter"><q>Ido?</q></article>
+    </slide>
+
+    <slide class="fill red segue">
+      <article class="flexbox vcenter"><q>"No"</q></article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>Modern Applications</h2>
+      </hgroup>
+      <article class="biggerFont">
+        <ul>
+          <li>Self Contained</li>
+          <li>MV* Frameworks</li>
+          <ul>
+            <li>Logic moving off the server</li>
+          </ul>
+          <li>Offline First</li>
+          <li>Device Aware</li>
+          <li><label class="color perf">#perfmatters</label></li>
+        </ul>
+        <p class="flexbox vright auto-fadein modernApps">
+          <img src="custom-images/modern-apps-icons.png" class="reflect" alt="modern app" title="Modern apps">
+        </p>
+      </article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>Cloud? Server?</h2>
+        <h3>Who needs 'em?</h3>
+      </hgroup>
+      <article class="biggerFont">
+        <ul>
+           <li>Consolidate the concept<br> of permanent application.</li>
+          <li>Tools:</li>
+          <ul>
+            <li><span class="blue">AppCache </span></li>
+            <li><span class="blue">localStorage</span></li>
+            <li> <span class="blue">File API</span></li>
+            <li>IndexedDB</li>
+          </ul>
+        </ul>
+        <img src="custom-images/cloud-server.jpg" alt="cloud and server are the friends of html5" class="cloudServerImg"/>
+      </article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>Cloud? Server?</h2>
+        <h3>Who needs 'em?</h3>
+      </hgroup>
+      <article class="biggerFont">
+        <ul>
+          <li>Minimize interactions with the "Cloud"</li>
+          <ul>
+            <li>Offline first <label class="color perf">#perfmatters</label>
+              <ul>
+                <li>Flaky connections</li>
+                <li>Airport...deserted island...a cloud...</li>
+              </ul>
+            </li>
+            <li>Pretend that there's no internet connection</li>
+            <li>Abstract sync layer from UI:</li>
+          </ul>
+        </ul>
+        <pre class="prettyprint" data-lang="javascript">
+navigator.onLine & window.(ononline|onoffline)</pre>
+      </article>
+    </slide>
+
+    <slide class="fill blue segue">
+      <article class="flexbox vcenter"><q>Danny?</q></article>
+    </slide>
+
+    <slide class="fill green segue">
+      <article class="flexbox vcenter"><q>Yes</q></article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>Modern Applications</h2>
+        <h3>How do they rely on the cloud?</h3>
+      </hgroup>
+      <article class="biggerFont">
+        <ul>
+          <li>Offload computation</li>
+          <ul><li>Datacenter in my hand</li></ul>
+          <li>Persistence</li>
+          <li>Same User</li>
+          <ul><li>Multiple Clients</li></ul>
+          <li>Sharing</li>
+        </ul>
+         <img src="custom-images/cloud-server.jpg" alt="cloud and server are the friends of html5" class="cloudServerImg"
+         style="border-radius:50%"/>
+      </article>
+    </slide>
+
+    <slide class="fill blue segue">
+      <hgroup>
+        <h2><span class="emphatic">Minimize interactions</span> he says</h2>
+      </hgroup>
+    </slide>
+
+    <slide class="fill blue segue">
+      <hgroup>
+        <h2><span class="emphatic">Offline first</span> he says</h2>
+      </hgroup>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>Server matters? Minimize interactions!</h2>
+      </hgroup>
+      <article class="biggerFont">
+        <div class="build">
+          <ul class="build">
+            <li><a href="http://en.wikipedia.org/wiki/Don't_repeat_yourself">DRY: Don't Repeat Yourself</a></li>
+            <ul class="build"><li>Code (duh)</li><li>Network calls (ORLY?)</li></ul>
+            <li>Get most out of each<br>interaction</li>
+          </ul>
+          <p class="flexbox vright lickBowlImg">
+            <img src="custom-images/lick_bowl_clean.jpg" alt="Lick Bowl Clean" title="Lick Bowl Clean">
+          </p>
+        </div>
+        <footer class="source">flickr.com/photos/kli-photo/6043769760</footer>
+      </article>
+    </slide>
+
+    <slide class="segue dark nobackground">
+      <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+      <hgroup class="auto-fadein">
+        <h2>Google Cloud Platform</h2>
+        <h3>Tools to help our friends (the mobile client)</h3>
+      </hgroup>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>Modern Apps and The Server Conundrum</h2>
+      </hgroup>
+      <article class="biggerFont">
+        <ul>
+          <li><span class="red">Who</span> wants to run a server?</li>
+          <ul>
+            <li>Running a server is hard</li>
+            <li>Let's go shopping</li>
+          </ul>
+        </ul>
+
+        <p class="flexbox vright auto-fadein hercoImg">
+          <img src="custom-images/herco.png" class="reflect" alt="it's hard to lift servers to the air" title="It's hard to lift servers to the air" style="position:relative; bottom:2em;">
+        </p>
+        <footer class="source">greenido.wordpress.com/photos/</footer>
+      </article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>Modern Apps and The Server Conundrum</h2>
+      </hgroup>
+      <article class="biggerFont">
+        <ul>
+          <li><span class="red">But</span> who wants to run a server?</li>
+          <ul>
+            <li>Traffic Spikes</li>
+            <li>Client Server communication</li>
+            <li>Serialization</li>
+            <li>OAuth Dance</li>
+          </ul>
+        </ul>
+
+      </article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>Google Cloud Platform</h2>
+        <h3>The Goal</h3>
+      </hgroup>
+      <article class="flexbox vcenter">
+        <span><img style="position: relative; top: -75px; border-radius:25px;" src="custom-images/easy_button.jpg"></span>
+        <footer class="source">commons.wikimedia.org/wiki/File:Easy_button.JPG</footer>
+      </article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>Google App Engine</h2>
+      </hgroup>
+      <article class="flexbox vcenter">
+        <!-- TODO: This css/html sucks -->
+        <img style="position: relative; bottom: 30px;" src="custom-images/app_engine-256.png" alt="Google App Engine" title="Google App Engine">
+        <div style="position: relative; bottom: 10px;">
+          <img style="position: relative; left: -20px;" src="custom-images/java-logo.png" alt="Java Logo" title="Java Logo">
+          <img style="position: relative; left: 50px;" src="custom-images/go-logo.png" alt="Go Logo" title="Go Logo">
+          <img style="position: relative; left: 60px;" src="custom-images/python-logo.png" alt="Python Logo" title="Python Logo">
+          <img style="position: relative; left: 50px;" src="custom-images/php-logo.png" alt="PHP Logo" title="PHP Logo">
+        </div>
+      </article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2><a href="https://developers.google.com/appengine/docs/python/endpoints">Google Cloud Endpoints</a></h2>
+      </hgroup>
+      <article class="flexbox vcenter">
+        <img src="custom-images/endpoints-diagram.png" alt="Endpoints Diagram" title="Endpoints Diagram">
+      </article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>Google APIs</h2>
+        <h3>The <a href="https://developers.google.com/discovery/">Discovery Document</a></h3>
+      </hgroup>
+      <article class="smaller">
+        <div style="position: relative; bottom: 40px;">
+          <a href="https://developers.google.com/apis-explorer/#p/discovery/v1/discovery.apis.getRest?api=urlshortener&version=v1">
+            <pre class="prettyprint" data-lang="json">
+"schemas": {
+ ...
+},
+"resources": {
+ "url": {
+  "methods": {
+   "get": {
+    "id": "urlshortener.url.get",
+    "path": "url",
+    "httpMethod": "GET",
+    "description": "Expands a short URL or gets creation time and analytics.",
+    "parameters": {
+     ...
+    },
+    "parameterOrder": {
+     ...
+    },
+    "response": {
+     ...
+    }
+   },
+   "insert": {
+    ...</pre>
+          </a>
+        </div>
+      </article>
+    </slide>
+
+    <slide class="fill red segue">
+      <article class="flexbox vcenter">
+        <h2>Discovery Document</h2>
+        <br>
+        <div class="build">
+          <h2><span class="emphatic">So what?</span></h2>
+        </div>
+      </article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>
+          <a href="https://developers.google.com/api-client-library/">Client Libraries</a> Like Whoa!!
+        </h2>
+      </hgroup>
+      <article>
+        <ul class="build" style="position: relative; top: -30px;">
+          <li><span class="boldItem">Web</span></li>
+          <ul>
+            <li><a href="https://developers.google.com/api-client-library/javascript/">JavaScript</a>:
+              <code class="green">google-api-javascript-client</code>
+            </li>
+            <li><a href="https://github.com/google/google-api-nodejs-client">Node.js</a>:
+              <code class="green">google-api-nodejs-client</code>
+            </li>
+            <li><a href="https://code.google.com/p/google-api-dart-client">Dart</a>:
+              <code class="green">google-api-dart-client</code>
+            </li>
+          </ul>
+          <li><span class="boldItem">Mobile</span></li>
+          <ul>
+            <li><a href="https://code.google.com/p/google-api-objectivec-client">Objective-C</a>:
+              <code class="green">google-api-objectivec-client</code>
+            </li>
+            <li><a href="https://code.google.com/p/google-api-java-client">Java</a>:
+              <code class="green">google-api-java-client</code>
+            </li>
+          </ul>
+          <li><span class="boldItem">Server-side</span></li>
+          <ul>
+            <li><a href="https://github.com/google/google-api-ruby-client">Ruby</a>:
+              <code class="green">google-api-ruby-client</code>
+            </li>
+            <li><a href="https://developers.google.com/api-client-library/python/">Python</a>:
+              <code class="green">google-api-python-client</code>
+            </li>
+            <li><a href="https://code.google.com/p/google-api-go-client">Go</a>:
+              <code class="green">google-api-go-client</code>
+            </li>
+            <li><a href="https://code.google.com/p/google-api-php-client">PHP</a>:
+              <code class="green">google-api-php-client</code>
+            </li>
+            <li>...</li>
+          </ul>
+        </ul>
+      </article>
+
+      <aside class="note">
+        <section>
+          <ul>
+            <li>Server side left out:</li>
+            <li><a href="https://code.google.com/p/google-api-dotnet-client">.NET</a>:
+              <code class="green">google-api-dotnet-client</code>
+            </li>
+            <li><a href="https://code.google.com/p/gwt-google-apis">GWT</a>:
+             <code class="green">gwt-google-apis</code>
+            </li>
+          </ul>
+        </section>
+      </aside>
+
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>Google Cloud Endpoints</h2>
+        <h3>Your own API, your own Discovery Document</h3>
+      </hgroup>
+      <article class="smaller">
+        <div style="position: relative; bottom: 40px;">
+          <a href="/_ah/api/explorer#p/discovery/v1/discovery.apis.getRest?api=picturesque&version=v1">
+            <pre class="highlighted-code prettyprint" data-lang="json">
+"schemas": {
+ ...
+},
+"resources": {
+ <b>"photo"</b>: {
+  "methods": {
+   <b>"create"</b>: {
+    "id": <b>"picturesque.photo.create"</b>,
+    "path": <b>"photo"</b>,
+    "httpMethod": <b>"POST"</b>,
+    "description": <b>"Simple method to create a photo with title and description."</b>,
+    "request": {
+     ...
+    },
+    "response": {
+     ...
+    },
+    "scopes": {
+     ...
+    }
+   },
+   <b>"delete"</b>: {
+    ...</pre>
+          </a>
+        </div>
+      </article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>Using
+          <a href="https://github.com/GoogleCloudPlatform/endpoints-proto-datastore">
+            <code class="green">endpoints-proto-datastore</code></a>
+        </h2>
+        <h3>Data and Interface One and the Same</h3>
+      </hgroup>
+      <article>
+        <pre class="prettyprint" data-lang="python">
+class BankAccount(EndpointsModel):
+  owner = ndb.StringProperty()
+  balance = ndb.FloatProperty()</pre>
+        <pre class="prettyprint" data-lang="json">
+POST /_ah/api/bank/v1/account/update
+
+{
+  'owner': 'Danny Hermes',
+  'balance': 13.37
+}</pre>
+      </article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>Using <code class="green">endpoints-proto-datastore</code></h2>
+        <h3>Data and Interface One and the Same</h3>
+      </hgroup>
+      <article class="biggerFont">
+        <ul>
+          <li>API, API, API</li>
+          <li>Who cares about APIs?</li>
+          <li>A ... P ... I ...?</li>
+          <li><b class="blue">INTERFACE!</b></li>
+        </ul>
+      </article>
+    </slide>
+
+    <slide class="segue dark nobackground">
+      <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+      <hgroup class="auto-fadein">
+        <h2>Let's talk Offline</h2>
+        <h3>(Client baby!)</h3>
+      </hgroup>
+    </slide>
+
+    <slide class="fill nobackground current" style="background-image: url(custom-images/offline_demo.png)">
+    </slide>
+
+    <slide class="fill green segue">
+      <article class="flexbox vcenter"><q>Application</q></article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>AppCache</h2>
+        <h3>No connection? No problem</h3>
+      </hgroup>
+      <article class="biggerFont">
+        <ul>
+          <li>A mobile web app requires a "one-time" connection <br>After this, everything should work</li>
+          <li>First save locally</li>
+          <li>Sync - Sync - Sync in the background</li>
+        </ul>
+      </article>
+
+      <aside class="note">
+        <section>
+          <div>
+            <ul>
+              <li>Just as downloading a native app requires a connection to app store/play store, a mobile web app requires a "one-time" connection. After this, everything should "just work"</li>
+              <li>Ya... there are Script we don't own (<a href="https://apis.google.com/js/client:plusone.js"> +1 Button</a>) being loaded async</li>
+
+            </ul>
+          </div>
+        </section>
+      </aside>
+    </slide>
+
+    <slide class="fill green segue">
+      <article class="flexbox vcenter"><q>Photos</q></article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>HTML5 And the Offline World</h2>
+      </hgroup>
+      <article class="biggerFont">
+        <ul>
+          <li>Application <b>and</b> your data? Yes!</li>
+          <li><a href="https://developers.google.com/chrome/whitepapers/storage">HTML5 Storage</a> </li>
+          <ul>
+            <li><a href="http://www.html5rocks.com/en/tutorials/appcache/beginner/">Application cache</a></li>
+            <li><a href="http://dev.w3.org/html5/webstorage/">localStorage</a></li>
+            <li>Files! - easy with <a href="https://github.com/ebidel/filer.js">filer.js</a></li>
+          </ul>
+          <li><span class="red">Psst...</span> <br>Passing base64 photos to server,<br>
+          but rendering data URL is more expensive!</li>
+          <div class="flexbox vright autoOffline">
+            <img src="custom-images/auto-offline.png" alt="offline with Ido's off-road car" style="border-radius: 15px;"/>
+          </div>
+        </ul>
+      </article>
+    </slide>
+
+    <slide class="fill green segue">
+      <article class="flexbox vcenter"><q>Photo Metadata</q></article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>Offline World</h2>
+      </hgroup>
+      <article class="biggerFont">
+        <ul>
+          <li>Offline storage in mobile web is <b>complex</b></li>
+          <li><a href="http://brian.io/lawnchair/">Lawnchair</a> abstracts a common interface
+            for interacting</li>
+            <ul>
+              <li><span class="green">localStorage</span> / Web Storage</li>
+              <li>IndexedDB / WebSQL</li>
+            </ul>
+
+          <li>Save in offline storage, without worrying about the environment</li>
+        </ul>
+      </article>
+    </slide>
+
+    <slide class="fill nobackground current" style="background-image: url(custom-images/offline_demo_no_resources.png)">
+    </slide>
+
+    <slide class="segue dark nobackground">
+      <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+      <hgroup class="auto-fadein">
+        <h2>Let's talk Online</h2>
+        <h3>(Calling APIs)</h3>
+      </hgroup>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>OAuth 2.0? You got it</h2>
+        <h3><code class="green">google-api-javascript-client</code></h3>
+      </hgroup>
+      <article>
+        <pre class="prettyprint" data-lang="html">
+&lt;body&gt;
+  &lt;button class="g-signin"
+      data-callback=<b>"signinCallback"</b>
+      data-clientId="123456.apps.googleusercontent.com"
+      ...
+      data-scope="https://www.googleapis.com/auth/plus.login ..."&gt;
+  &lt;/button&gt;
+&lt;/body&gt;</pre>
+        <div class="flexbox vcenter">
+          <img src="custom-images/sign-in-with-google.png" />
+        </div>
+      </article>
+
+      <aside class="note">
+        <section>
+        <div>The <code class="green">gapi</code> library is loaded here</div>
+        </section>
+      </aside>
+
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>Let's see those benefits of Discovery</h2>
+        <h3><code class="green">google-api-javascript-client</code></h3>
+      </hgroup>
+      <article>
+        <div style="position: relative; top: -60px;">
+          <h3>Google's APIs:</h3>
+          <pre class="prettyprint" data-lang="javascript">
+// Load the API
+gapi.client.load(<b>'urlshortener', 'v1',</b> loadingSuccessCallback);
+
+// Call the API
+var payload = {'shortUrl': 'http://goo.gl/c9gt3'};
+gapi.client.<b>urlshortener.url.get</b>(payload).execute(apiResponseCallback);</pre>
+
+          <h3>Your Own API:</h3>
+          <pre class="prettyprint" data-lang="javascript">
+var <b>apiRoot = window.location.origin + '/_ah/api';</b>
+gapi.client.load(<b>'picturesque', 'v1',</b> loadingSuccessCallback, <b>apiRoot</b>);
+
+var payload = {'key': '1337'};
+gapi.client.<b>picturesque.photo.get</b>(payload).execute(apiResponseCallback);</pre>
+        </div>
+      </article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>What happened to <span class="emphatic">Minimize interactions</span>?</h2>
+      </hgroup>
+      <article class="biggerFont">
+        <ul>
+          <li><code class="green">gapi.client.load</code> uses a<br>network call
+            <span class="emphatic">every time</span>
+          </li>
+          <li>Can't waste one request in<br>flaky conditions</li>
+          <li>To <span class="blue">get the most</span>, we must<br>tweak slightly</li>
+        </ul>
+        <p class="flexbox vright lickBowlImg">
+          <img src="custom-images/lick_bowl_clean.jpg" alt="Lick Bowl Clean" title="Lick Bowl Clean">
+        </p>
+        <footer class="source">flickr.com/photos/kli-photo/6043769760</footer>
+      </article>
+
+      <aside class="note">
+        <section>
+        <div class="biggerFont"><span class="blue">"Life is complicated."</span> - Ido Green</div>
+        </section>
+      </aside>
+    </slide>
+
+    <slide class="fill nobackground current" style="background-image: url(custom-images/hands_dirty.jpg)">
+      <hgroup>
+        <h2 class="white">Let's Get Our Hands Dirty</h2>
+        <h3 class="white">(Just a little bit)</h3>
+      </hgroup>
+      <article>
+        <footer class="white source">flickr.com/photos/16210667@N02/8681651088</footer>
+      </article>
+    </slide>
+
+    <slide class="fill nobackground current" style="background-image: url(custom-images/rpc_waterfall.png)">
+    </slide>
+
+    <slide class="fill nobackground current" style="background-image: url(custom-images/rpc_individual.png)">
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>Never fear!</h2>
+        <h3>We can still use <code class="green">gapi</code></h3>
+      </hgroup>
+      <article>
+        <pre class="prettyprint" data-lang="javascript">
+var payload = {'id': '1337'};
+var rpcRequestObject = <b>gapi.client.rpcRequest(</b>
+    <b>'picturesque.photo.get', 'v1'</b>, payload);
+// Set the root to the custom API root
+rpcRequestObject.<b>execute(callback)</b>;</pre>
+      </article>
+    </slide>
+
+    <slide class="segue dark nobackground">
+      <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+      <hgroup class="auto-fadein">
+        <h2>Separation of Concerns</h2>
+        <h3>UI Layer and Data Layer</h3>
+      </hgroup>
+    </slide>
+
+    <slide class="fill nobackground current" style="background-image: url(custom-images/save_screenshot.png)">
+      <aside class="note">
+        <section>
+          <div style="position: relative;left: 1.5em;">
+            <pre class="highlighted-code prettyprint" data-lang="javascript">
+&lt;input id="uploadImg" type="file"
+       accept="image/*" <b>capture="camera"</b>&gt;
+            </pre>
+          </div>
+        </section>
+      </aside>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>Client: Ready for Action</h2>
+      </hgroup>
+      <article>
+        <pre class="highlighted-code prettyprint" data-lang="javascript">
+// Configure store
+var uiCallbacks = { ... };
+<b>var store = new PicturesqueApp.data.DataStore(uiCallbacks);</b>
+
+// Add photo both locally and on the server
+$('#save').click(
+  ...
+  <b>store.addPhoto(title, base64Photo, mimeType, description);</b>
+);</pre>
+      </article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>Cloud: Ready for Action</h2>
+      </hgroup>
+      <article>
+        <div class="build">
+          <pre class="prettyprint" data-lang="python">
+class Photo(EndpointsModel):
+  title = ndb.StringProperty()
+  ...</pre>
+          <pre class="highlighted-code prettyprint" data-lang="python">
+@endpoints.api(name='picturesque', version='v1', ...)
+class PicturesqueApi(remote.Service):
+
+  <b>@Photo.method</b>(user_required=True, path='photo', name='photo.create')
+  <b>def PhotoCreate(self, photo):</b>
+    # do some validation
+    <b>photo.put()</b>
+    return photo</pre>
+        </div>
+      </article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2><code class="green">store.addPhoto()</code></h2>
+        <h3>What does it actually do?</h3>
+      </hgroup>
+      <article class="biggerFont">
+        <ul>
+          <li>Separate concerns</li>
+          <li>UI and Data not bound together</li>
+          <li>Use <code class="green">navigator.onLine</code> and
+            <code class="green">window.ononline</code></li>
+          <ul>
+            <li>Communicate with the API directly <span class="emphatic">OR</span></li>
+            <li>Add task to a sync queue</li>
+          </ul>
+        </ul>
+      </article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2><code class="green">store.addPhoto()</code></h2>
+        <h3>What does it actually do?</h3>
+      </hgroup>
+      <article class="biggerFont">
+        <pre class="highlighted-code prettyprint" data-lang="javascript">
+var <b>task = new PicturesqueApp.data.ApiCallbackTask</b>(
+    PicturesqueApp.api.callPicturesqueAPI, 'photo', 'create',
+    apiPayload, anonymousCreateCallback);</pre>
+        <pre class="highlighted-code prettyprint" data-lang="javascript">
+PicturesqueApp.data.ApiCallbackTask.prototype.<b>callTask</b> = function() {
+  // Order is important here.
+  if <b>(!PicturesqueApp.data.joinedPicturesque)</b> {
+    PicturesqueApp.data.<b>JOIN_PICTURESQUE_QUEUE.tasks.push</b>(this);
+  } else if <b>(navigator.onLine)</b> {
+    PicturesqueApp.utils.CallbackTask.prototype.<b>callTask</b>.call(this);
+  } else {
+    PicturesqueApp.<b>offline.addTaskToQueue</b>(this);
+  }
+};</pre>
+      </article>
+    </slide>
+
+    <slide class="segue dark nobackground">
+      <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+      <hgroup class="auto-fadein">
+        <h2>Utilizing Expensive Computation</h2>
+        <h3>Queries FTW</h3>
+      </hgroup>
+    </slide>
+
+    <slide class="fill green segue">
+      <article class="flexbox vcenter">
+        <h2>Did we mention?</h2>
+        <br>
+        <div class="build">
+          <h2><span class="emphatic">Minimize Interactions</span></h2>
+        </div>
+      </article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>Minimize Interactions</h3>
+        <h3>Rinse and Repeat</h4>
+      </hgroup>
+      <article class="biggerFont">
+        <ul>
+          <li>Load photos from Cloud sequentially</li>
+          <li>Display and Store Locally</li>
+          <li>Track the <code class="green">updated</code> time stamp</li>
+          <li>More than one page of results? You know what to do</li>
+          <ul>
+            <li>Communicate with the API directly <span class="emphatic">OR</span></li>
+            <li>Add task to a sync queue</li>
+          </ul>
+        </ul>
+      </article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>Client Side Sample Code</h2>
+      </hgroup>
+      <article class="biggerFont">
+        <pre class="highlighted-code prettyprint" data-lang="javascript">
+PicturesqueApp.data.DataStore.prototype.getPhotos = function() {
+  var currentDataStore = this;
+  var <b>getRemoteCallback</b> = function() {
+    ...
+    currentDataStore.<b>getRemotePhotos(</b>
+        currentDataStore.getPhotosCompletionCallback, <b>lastUpdated,</b>
+        <b>pageToken, limit)</b>;
+    ...
+  };
+  ...
+  <b>currentDataStore.getLocalPhotos(getRemoteCallback);</b>
+};</pre>
+      </article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>Intelligent Queries</h2>
+        <h3>(Offload computation, anyone?)</h3>
+      </hgroup>
+      <article class="biggerFont">
+        <ul>
+          <li>Let persistence layer work harder</li>
+          <li>Create query indexes based on properties needed</li>
+          <li><code class="green">index.yaml</code></li>
+        </ul>
+
+        <pre class="prettyprint" data-lang="yaml">
+indexes:
+
+- kind: Photo
+  properties:
+  - name: owner
+  - name: updated</pre>
+      </article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>Intelligent Queries</h2>
+        <h3>(Offload computation, anyone?)</h3>
+      </hgroup>
+      <article>
+        <pre class="prettyprint" data-lang="python">
+from endpoints_proto_datastore.ndb import EndpointsAliasProperty
+
+class Photo(EndpointsModel):
+
+  ...
+
+  @EndpointsAliasProperty(name='lastUpdated', setter=LastUpdatedSet)
+  def last_updated(self):
+    ...</pre>
+      </article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>Intelligent Queries</h2>
+        <h3>(Offload computation, anyone?)</h3>
+      </hgroup>
+      <article>
+        <pre class="highlighted-code prettyprint" data-lang="python">
+  def LastUpdatedSet(self, value):
+    try:
+      <b>last_updated = utils.DatetimeValueFromString(value)</b>
+      if not isinstance(last_updated, datetime.datetime):
+        raise TypeError('Not a datetime stamp.')
+    except TypeError:
+      <b>raise endpoints.BadRequestException(</b>
+          <b>'Invalid timestamp for lastUpdated.')</b>
+
+    self._endpoints_query_info._filters.add<b>(Photo.updated >= last_updated)</b></pre>
+      </article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>Intelligent Queries</h2>
+        <h3>(Offload computation, anyone?)</h3>
+       </hgroup>
+      <article>
+        <pre class="prettyprint" data-lang="python">
+  @Photo.query_method(query_fields=('limit', 'pageToken', 'title',
+                                    <b>'lastUpdated'</b>),
+                      path='photos', name='photo.list')
+  def PhotoList(self, query):
+    return <b>query.order(Photo.updated)</b></pre>
+      </article>
+    </slide>
+
+    <slide class="segue dark nobackground">
+      <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+      <hgroup class="auto-fadein">
+        <h2>TODO</h2>  <!-- TODO is an intentional section name -->
+        <h3>Things we would like to have talked about and/or built</h3>
+      </hgroup>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>Ways to Extend</h3>
+      </hgroup>
+      <article class="biggerFont">
+        <ul>
+          <li>Sharing</li>
+          <ul>
+            <li>Use App Engine to create ACL for every photo</li>
+            <li>Google+ <a href="https://developers.google.com/+/web/share/interactive">interactive share buttons</a></li>
+          </ul>
+          <li>Use <a href="https://developers.google.com/storage/">Google Cloud Storage</a> to store photos</li>
+          <li>Changes feed to reduce payload size and local saves</li>
+          <li>Server side conflict resolution</li>
+          <li>...</li>
+        </ul>
+      </article>
+    </slide>
+
+    <slide class="fill blue segue">
+      <article class="flexbox vcenter"><q>Deep Breath</q></article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>Key Take Aways</h2>
+      </hgroup>
+      <article class="biggerFont">
+        <ul>
+          <li>Build powerful applications with Google Cloud Endpoints</li>
+          <li><span class="red">Minimize</span> and <span class="green">optimize</span> client and cloud communication</li>
+          <li>Use libraries and abstractions to minimize work</li>
+          <li>Leverage Modern Browser Features</li>
+        </ul>
+      </article>
+
+      <aside class="note">
+        <section>
+          <ul>
+            <li>Libraries and abstractions:</li>
+            <ul>
+              <li><code class="green">google-api-javascript-client</code></li>
+              <li>filer.js / Lawnchair</li>
+            </ul>
+            <li>Modern Browser Features:</li>
+            <ul>
+              <li>Offline</li>
+              <li>Device APIs</li>
+            </ul>
+          </ul>
+        </section>
+      </aside>
+
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>Check out related Sessions</h2>
+        <h3>
+          <a href="https://developers.google.com/events/io/sessions#t-google-cloud-platform">Cloud Platform</a>
+          and
+          <a href="https://developers.google.com/events/io/sessions#t-chrome-apps">Chrome</a>
+        </h3>
+      </hgroup>
+      <article>
+        <table class="relsessions">
+          <tbody>
+            <tr>
+              <th></th><th>Session Title</th><th>Time Slot</th><th>Room</th>
+            </tr>
+            <tr>
+              <td rowspan="2" style="background-color: rgb(255, 136, 0);" width="64px"><img width="64px" src="custom-images/track_googlecloudplatform.png" /></td>
+              <td><a href="https://developers.google.com/events/io/sessions/333508149">From Nothing to Nirvana in minutes:<br>Cloud Backend for your Android Application</a></td>
+              <td>5/16 @ 3:30pm</td>
+              <td>#2</td>
+            </tr>
+            <tr>
+              <td><a href="https://developers.google.com/events/io/sessions/332908798">Behind the Data Sensing Lab: Gathering, Processing,<br>and Analyzing Data at Scale using the Google Cloud Platform</a></td>
+              <td>5/16 @ 5:20pm</td>
+              <td>#7</td>
+            </tr>
+            <tr>
+              <td rowspan="2" style="background-color: rgb(2, 148, 199);" width="64px"><img width="64px" src="custom-images/track_chromeapps.png" /></td>
+              <td><a href="https://developers.google.com/events/io/sessions/325944029">Stunning Mobile Visualization with CSS Filters</a></td>
+              <td>5/16 @ 10:00am</td>
+              <td>#6</td>
+            </tr>
+            <tr>
+              <td><a href="https://developers.google.com/events/io/sessions/325586817">Mobile HTML: The Future of Your Sites</a></td>
+              <td>5/16 @ 1:40pm</td>
+              <td>#6</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>Thank You!</h2>
+      </hgroup>
+      <article class="flexbox twoimages">
+
+          <a href="http://goo.gl/c9gt3">
+            <img src="custom-images/slides_qr_code.png" />
+          </a>
+          <img src="custom-images/cloud_endpoints_logo.png" />
+
+      </article>
+    </slide>
+
+    <slide>
+      <hgroup>
+        <h2>Resources</h2>
+      </hgroup>
+      <article class="biggerFont">
+        <ul>
+          <li>Slides: <a href="http://goo.gl/c9gt3">goo.gl/c9gt3</a></li>
+          <li>Application: <a href="https://picturesque-app.appspot.com/">picturesque-app.appspot.com</a></li>
+          <li>Source Code: <a href="https://github.com/GoogleCloudPlatform/appengine-picturesque-python">
+            github.com/GoogleCloudPlatform/</a></li>
+          <li><a href="https://github.com/GoogleCloudPlatform/endpoints-proto-datastore"><code class="green">endpoints-proto-datastore</code></a>
+          </li>
+          <li><a href="http://www.html5rocks.com">html5rocks.com</a></li>
+          <li><a href="http://chromestatus.com">ChromeStatus.com</a><li>
+
+          <li>Contact us:
+            <a href="https://plus.google.com/+GreenIdo">+Ido Green</a>,
+            <a href="https://plus.google.com/+DannyHermes">+Danny Hermes</a>
+          </li>
+
+        </ul>
+      </article>
+    </slide>
+    <slide class="thank-you-slide segue nobackground">
+      <aside class="gdbar right"><img src="images/google_developers_icon_128.png"></aside>
+      <article class="flexbox vleft auto-fadein">
+        <h2>&lt;Thank You!&gt;</h2>
+      </article>
+      <p class="auto-fadein" data-config-contact>
+        <!-- populated from slide_config.json -->
+      </p>
+    </slide>
+
+    <slide class="logoslide dark nobackground">
+      <article class="flexbox vcenter">
+        <span><img src="images/google_developers_logo_white.png"></span>
+      </article>
+    </slide>
+
+    <slide class="backdrop"></slide>
+
+  </slides>
+
+  <script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-27750723-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script>
+
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+</html>

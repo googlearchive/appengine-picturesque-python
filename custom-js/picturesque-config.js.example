@@ -1,0 +1,128 @@
+// DEPENDS ON: Nothing
+
+'use strict';
+
+/** Namespace for application */
+var PicturesqueApp = PicturesqueApp || {};
+
+
+/**
+ * Placing this module within the application.
+ *
+ * Should only be defined here.
+ */
+PicturesqueApp.config = {};
+
+
+/**
+ * Name of property for photo list API requests to specify when results
+ * were last updated.
+ * @type {string}
+ */
+PicturesqueApp.config.LAST_UPDATED_PROPERTY_NAME = 'lastUpdated';
+
+
+/**
+ * Name of property on photo payloads that holds the photo title.
+ * @type {string}
+ */
+PicturesqueApp.config.TITLE_PROPERTY_NAME = 'title';
+
+
+/**
+ * Name of property on photo payloads that holds the description.
+ * @type {string}
+ */
+PicturesqueApp.config.DESCRIPTION_PROPERTY_NAME = 'description';
+
+
+/**
+ * Name of property on photo payloads that holds the tags.
+ * @type {string}
+ */
+PicturesqueApp.config.TAGS_PROPERTY_NAME = 'tags';
+
+
+/**
+ * Name of property on photo payloads that holds the base64 photo contents.
+ * @type {string}
+ */
+PicturesqueApp.config.BASE64_PROPERTY_NAME = 'base64Photo';
+
+
+/**
+ * Name of property on photo payloads that holds the photo MIME type.
+ * @type {string}
+ */
+PicturesqueApp.config.MIMETYPE_PROPERTY_NAME = 'mimeType';
+
+
+/**
+ * Name of property on photo payloads that will hold the URI of the local
+ * file created for the image.
+ * @type {string}
+ */
+PicturesqueApp.config.LOCAL_URI_PROPERTY_NAME = 'localUri';
+
+
+/**
+ * Name of property on photo payloads that holds the timestamp when the item
+ * was last updated.
+ * @type {string}
+ */
+PicturesqueApp.config.UPDATED_PROPERTY_NAME = 'updated';
+
+
+/**
+ * Name of API to be called.
+ * @type {string}
+ */
+PicturesqueApp.config.API_NAME = 'picturesque';
+
+
+/**
+ * Version of API to be called.
+ * @type {string}
+ */
+PicturesqueApp.config.API_VERSION = 'v1';
+
+
+/**
+ * Root URL of API to be called.
+ * @type {string}
+ */
+PicturesqueApp.config.API_ROOT = window.location.origin + '/_ah/api';
+
+
+/**
+ * DOM ID of the sign-in button.
+ * @type {string}
+ */
+PicturesqueApp.config.SIGN_IN_BUTTON_ID = 'signinButton';
+
+
+/**
+ * DOM ID of the container holding the sign-in button. This container is
+ * needed to manipulate the CSS without having the Google+ button loading
+ * impact the CSS.
+ * @type {string}
+ */
+PicturesqueApp.config.SIGN_IN_BUTTON_CONTAINER_ID = 'signinButtonContainer';
+
+
+/**
+ * Client ID from code.google.com/apis/console for the Javascript origin.
+ * See developers.google.com/console/help/#generatingoauth2 for more.
+ * @type {string}
+ */
+PicturesqueApp.config.CLIENT_ID = 'CLIENT_ID';
+
+
+/**
+ * List of API scopes for the Sign-in button (plug.login should always be
+ * included).
+ * @type {string}
+ */
+PicturesqueApp.config.SCOPES =
+    'https://www.googleapis.com/auth/userinfo.email ' +
+    'https://www.googleapis.com/auth/plus.login';

@@ -1,0 +1,58 @@
+indexes:
+
+# All queries will have an owner, so there is only one index with
+# just two properties.
+- kind: Photo
+  properties:
+  - name: owner
+  - name: updated
+
+# Indices with three properties.
+- kind: Photo
+  properties:
+  - name: acl
+  - name: owner
+  - name: updated
+
+- kind: Photo
+  properties:
+  - name: owner
+  - name: tags
+  - name: updated
+
+- kind: Photo
+  properties:
+  - name: owner
+  - name: title
+  - name: updated
+
+# Indices with four properties.
+- kind: Photo
+  properties:
+  - name: acl
+  - name: owner
+  - name: tags
+  - name: updated
+
+- kind: Photo
+  properties:
+  - name: acl
+  - name: owner
+  - name: title
+  - name: updated
+
+- kind: Photo
+  properties:
+  - name: owner
+  - name: tags
+  - name: title
+  - name: updated
+
+# Indices with five properties.
+- kind: Photo
+  properties:
+  - name: acl
+  - name: owner
+  - name: tags
+  - name: title
+  - name: updated

@@ -1,0 +1,36 @@
+<div data-role="page" id="add-update-page" data-theme="b">
+
+  <div data-role="header">
+    <h1>Picturesque</h1>
+    <a data-role="button" class="ui-btn-right" href="#mainPage" data-transition="fade"
+       data-icon="home" data-iconpos="left" data-theme="e" class="headerBut">Home</a>
+  </div>
+
+  <div data-role="content">
+
+    <form id="PicturesqueDetailsModal" data-role="content" >
+      <div data-role="fieldcontain">
+        <!-- The MAGIC is here... you will be able to access the camera on your Android/iPhone -->
+        <label id="photoButton" for="uploadImg">Take a Photo</label>
+        <input id="uploadImg" type="file" accept="image/*" capture="camera" style="visibility: hidden">
+        <div id="imgCaptured"></div>
+      </div>
+      <div data-role="fieldcontain">
+        <input name="title" id="PicturesqueTitle" placeholder="Name..." type="text" required="">
+      </div>
+      <div data-role="fieldcontain">
+        <textarea name="description" id="PicturesqueDescription" placeholder="Description #awesome #stuff..." type="text"></textarea>
+      </div>
+    </form>
+  </div>
+
+  <div data-role="footer">
+    <div data-role="navbar" >
+      <ul>
+        <li><a href="#mainPage" id="cancelPicturesque" class="btn" >Cancel</a></li>
+        <li><a href="#mainPage" id="savePicturesque" class="btn btn-primary">Save</a></li>
+      </ul>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,210 @@
+<!--
+Google IO 2013 - Mobile, Web and Cloud - The Triple Crown of Modern Applications
+Authors: Ido Green    - plus.google.com/+GreenIdo
+         Danny Hermas - plus.google.com/+DannyHermas
+-->
+<!DOCTYPE html>
+<html manifest="definition.appcache">
+  <head>
+    <title>Picturesque</title>
+    <meta name="description" content="Picturesque - Google I/O 2013">
+    <meta name="author" content="Ido Green and Danny Hermes">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="custom-js/libs/jquery-1.7.2.min.js"></script>
+    <script src="custom-js/libs/jquery.mobile-1.1.0.js"></script>
+
+    <link href="custom-css/bootstrap.css" rel="stylesheet">
+    <link href="custom-css/app-style.css" rel="stylesheet">
+    <link href="custom-css/jquery.mobile.structure-1.1.0.css" rel="stylesheet">
+    <link href="custom-css/jquery.mobile.theme-1.1.0.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Main page -->
+    <div data-role="page" id="mainPage" data-theme="b" data-title="Picturesque">
+
+      <div data-role="header" data-position="fixed">
+        <h2>Picturesque!</h2>
+        <button id="connStatus" data-icon="" class="ui-btn-left" data-theme="e">Ready</button>
+        <a href="#" id="reload" data-role="button" class="ui-btn-right headerBut" data-icon="refresh">Reload</a>
+
+      </div>
+
+      <div data-role="content">
+        <div data-role="controlgroup" id="actionGroup">
+          <!-- Need an extra container since Google+ Sign-in -->
+          <!-- overrides CSS on the actual button -->
+          <div id="signinButtonContainer">
+            <div id="signinButton"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="centeredPhotos">
+        <div class="row">
+          <div id="picColumnLeft" class="span4 pagination-centered"></div>
+          <div id="picColumnCenter" class="span4 pagination-centered"></div>
+          <div id="picColumnRight" class="span4 pagination-centered"></div>
+        </div>
+      </div>
+
+      <div data-role="footer" data-position="fixed" >
+        <div data-role="navbar" >
+          <ul>
+            <li><a href="#add-update-page" id="favorite" data-icon="plus">Add</a></li>
+            <li><a href="#sharePage" id="sharePageButton" data-icon="forward">Share</a></li>
+            <li><a href="#aboutPage" id="aboutButton" data-icon="info">About</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Add photo page -->
+    <div data-role="page" id="add-update-page" data-theme="b">
+
+      <div data-role="header">
+        <h1>Picturesque</h1>
+        <a data-role="button" class="ui-btn-right" href="#mainPage" data-transition="fade"
+           data-icon="home" data-iconpos="left" data-theme="e" class="headerBut">Home</a>
+      </div>
+
+      <div data-role="content">
+
+        <form id="PicturesqueDetailsModal" data-role="content" >
+          <div data-role="fieldcontain">
+            <!-- The MAGIC is here... you will be able to access the camera on your Android/iPhone -->
+            <label id="photoButton" for="uploadImg">Take a Photo</label>
+            <input id="uploadImg" type="file" accept="image/*" capture="camera" style="visibility: hidden">
+            <div id="imgCaptured"></div>
+          </div>
+          <div data-role="fieldcontain">
+            <input name="title" id="PicturesqueTitle" placeholder="Name..." type="text" required="">
+          </div>
+          <div data-role="fieldcontain">
+            <textarea name="description" id="PicturesqueDescription" placeholder="Description #awesome #stuff..." type="text"></textarea>
+          </div>
+        </form>
+      </div>
+
+      <div data-role="footer">
+        <div data-role="navbar" >
+          <ul>
+            <li><a href="#mainPage" id="cancelPicturesque" class="btn" >Cancel</a></li>
+            <li><a href="#mainPage" id="savePicturesque" class="btn btn-primary">Save</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- About Page -->
+    <!-- TODO: should have an amazing photo -->
+    <div data-role="page" id="aboutPage" data-theme="b" data-title="Picturesque">
+
+      <div data-role="header">
+        <h1>Picturesque</h1>
+        <a data-role="button" class="ui-btn-right headerBut" href="#mainPage" data-icon="home"
+           data-iconpos="left" data-theme="e">Home</a>
+      </div>
+
+      <div data-role="content">
+        <div class="div-widget" data-role="navbar">
+          <ul>
+            <li><a href="/slides" target="_blank">Slides</a></li>
+            <li>
+              <a href="https://github.com/GoogleCloudPlatform/appengine-picturesque-python" target="_blank">
+                Source Code</a>
+            </li>
+          </ul>
+        </div>
+
+        <div data-role="controlgroup" id="actionGroup"></div>
+        <!-- TODO: Add chrome logo here too -->
+        <img src="custom-images/cloud_endpoints_logo.png"
+             alt="app icon" height="240" style="display: block; margin: 0 auto">
+      </div>
+
+      <div data-role="footer">
+        <h1>Google I/O 2013</h1>
+      </div>
+    </div>
+
+    <!-- Share your photo be cool -->
+    <div data-role="page" id="sharePage" data-theme="b" data-title="Picturesque">
+
+      <div data-role="header">
+        <h1>Share On G+</h1>
+        <a data-role="button" class="ui-btn-right headerBut" href="#mainPage" data-icon="home"
+        data-iconpos="left" data-theme="e">Home</a>
+      </div>
+
+      <div data-role="content">
+        <div class="div-widget" data-role="navbar">
+          <ul>
+            <li>
+              <a id="showGooglePlusPeople" class="btn btn-large" title="Choose friends from G+">
+                Choose Friends</a>
+            </li>
+            <li><a id="shareImage" class="btn btn-large">Share Image</a></li>
+            <li><a id="shareDiv" class="btn btn-large" style="display: none">Send</a></li>
+          </ul>
+        </div>
+
+        <div id="googlePlusPeople" style="display: none">
+          <h2>People from G+</h2>
+          <h3>Click to Select</h3>
+          <div style="border:2px solid gray;"></div>
+        </div>
+
+        <div id="sharePageResults">
+          <!-- TODO: Add chrome logo here too -->
+          <img src="custom-images/cloud_endpoints_logo.png"
+               alt="app icon" height="240" style="display: block; margin: 0 auto; border-radius:20px">
+        </div>
+
+      </div>
+
+      <div data-role="footer">
+        <h1>Google I/O 2013</h1>
+      </div>
+    </div>
+
+    <!-- Confirmation dialog to upgrade our app -->
+    <div data-role="dialog" id="sure" data-title="Are you sure?">
+      <div data-role="content">
+        <h3 class="sure-title">An update is available.</h3>
+        <p class="sure-content">Reload now?</p>
+        <a href="#" class="sure-do" data-role="button" data-theme="b" data-rel="back">Yep - Please</a>
+        <a href="#" data-role="button" data-theme="c" data-rel="back">Nope</a>
+      </div>
+    </div>
+
+    <!-- Javascript modules needed -->
+    <script src="custom-js/libs/bootstrap/bootstrap.min.js"></script>
+    <script src="custom-js/libs/filer.min.js"></script>
+    <script src="custom-js/libs/lawnchair-0.6.1.js"></script>
+
+    <!-- Our modules; Order is important -->
+    <!-- TODO: Remove "DEPENDS ON" lines from these modules -->
+    <script src="custom-js/picturesque-config.js"></script>
+    <script src="custom-js/picturesque-utils.js"></script>
+    <script src="custom-js/picturesque-offline.js"></script>
+    <script src="custom-js/picturesque-api.js"></script>
+    <script src="custom-js/picturesque-data.js"></script>
+    <script src="custom-js/picturesque-ui.js"></script>
+
+
+    <script>
+    PicturesqueApp.api.loadGapi();
+    // In case loadGapi fails, try again when coming back from being offline.
+    // This will be fine since loadGapi is idempotent.
+    PicturesqueApp.offline.addOnOnlineCallback(PicturesqueApp.api.loadGapi);
+
+    // If no network or not signed in, a task will be added the the
+    // corresponding queue.
+    PicturesqueApp.ui.STORE.getPhotos();
+    </script>
+  </body>
+</html>

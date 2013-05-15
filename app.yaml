@@ -1,0 +1,72 @@
+application: picturesque-app
+version: 1
+runtime: python27
+threadsafe: true
+api_version: 1
+
+handlers:
+# Endpoints handler
+- url: /_ah/spi/.*
+  script: services.application
+
+- url: /
+  static_files: html/index.html
+  upload: html/index\.html
+  secure: always
+
+- url: /slides
+  static_files: html/slides.html
+  upload: html/slides\.html
+  secure: always
+
+- url: /definition.appcache
+  static_files: definition.appcache
+  mime_type: text/cache-manifest
+  upload: definition\.appcache
+  secure: always
+
+- url: /slide_config\.js
+  static_files: slide_config.js
+  upload: slide_config\.js
+  secure: always
+
+# Use the default IO Slidedeck assets at the assumed paths
+- url: /js
+  static_dir: io-2012-slides/js
+  secure: always
+
+- url: /theme
+  static_dir: io-2012-slides/theme
+  secure: always
+
+- url: /images
+  static_dir: io-2012-slides/images
+  secure: always
+
+# Use separate path for our own assets
+- url: /custom-js
+  static_dir: custom-js
+  secure: always
+
+- url: /custom-css
+  static_dir: custom-css
+  secure: always
+
+- url: /custom-images
+  static_dir: custom-images
+  secure: always
+
+# Final catch-all handler for unspecified pages
+- url: /.*
+  static_files: html/404.html
+  upload: html/404\.html
+  secure: always
+
+builtins:
+- deferred: on
+- remote_api: on
+
+libraries:
+# Needed for endpoints/users_id_token.py.
+- name: pycrypto
+  version: "2.6"

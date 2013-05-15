@@ -1,0 +1,17 @@
+# Copyright 2013 Google Inc. All Rights Reserved.
+
+"""Module containing configuration constants."""
+
+
+from google.appengine.ext.endpoints.api_config import EMAIL_SCOPE
+
+
+# Client ID from code.google.com/apis/console for the Javascript origin.
+# See developers.google.com/console/help/#generatingoauth2 for more.
+CLIENT_ID = 'CLIENT_ID'
+PLUS_LOGIN_SCOPE = 'https://www.googleapis.com/auth/plus.login'
+API_SCOPES = [EMAIL_SCOPE, PLUS_LOGIN_SCOPE]
+
+# To be used to populate a test user account with photos
+TEST_USER_EMAIL = 'test@mail.com'
+TEST_USER_ID = '123456'  # This is the GAE User ID

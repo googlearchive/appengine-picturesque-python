@@ -1,0 +1,63 @@
+.carousel-caption {
+  position: relative;
+  margin-bottom: 2em;
+}
+
+#googlePlusPeople > div > img {
+  border: 3px solid white;
+  opacity: 0.5;
+}
+
+#googlePlusPeople > div > img.selected {
+  border: 3px solid red;
+  border-radius: 12px;
+  opacity: 1.0;
+}
+
+#signinButtonContainer:not(.visible) {
+  display: none;
+  padding-top:4px;
+}
+
+.headerBut {
+  margin-top: 7px;
+}
+
+#connStatus {
+  margin-top: 7px;
+  margin-right: 5px;
+  color: #FFF;
+  font-weight: normal;
+  border-radius: 50%;
+}
+
+/* TODO(idog): Is this still used? */
+#photoButton {
+  padding: 1em;
+  font-weight: bold;
+  background-color: #D7F112;
+  border-radius: 20px;
+  width: 7.5em;
+  display: block;
+  text-align: center;
+  line-height: 150%;
+  font-size: 1em;
+}
+
+.centeredPhotos {
+  margin-left: 1em;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-pack: center;
+  -moz-box-align: center;
+
+  display: box;
+  box-orient: horizontal;
+  box-pack: center;
+  box-align: center;
+}

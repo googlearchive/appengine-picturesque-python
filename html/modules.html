@@ -1,0 +1,24 @@
+<script src="custom-js/libs/bootstrap/bootstrap.min.js"></script>
+<script src="custom-js/libs/filer.min.js"></script>
+<script src="custom-js/libs/lawnchair-0.6.1.js"></script>
+
+<!-- Our modules; Order is important -->
+<!-- TODO: Remove "DEPENDS ON" lines from these modules -->
+<script src="custom-js/picturesque-config.js"></script>
+<script src="custom-js/picturesque-utils.js"></script>
+<script src="custom-js/picturesque-offline.js"></script>
+<script src="custom-js/picturesque-api.js"></script>
+<script src="custom-js/picturesque-data.js"></script>
+<script src="custom-js/picturesque-ui.js"></script>
+
+
+<script>
+PicturesqueApp.api.loadGapi();
+// In case loadGapi fails, try again when coming back from being offline.
+// This will be fine since loadGapi is idempotent.
+PicturesqueApp.offline.addOnOnlineCallback(PicturesqueApp.api.loadGapi);
+
+// If no network or not signed in, a task will be added the the
+// corresponding queue.
+PicturesqueApp.ui.STORE.getPhotos();
+</script>

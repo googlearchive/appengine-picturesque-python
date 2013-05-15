@@ -1,0 +1,50 @@
+CACHE MANIFEST
+
+# This is the 'way' to change version and force update of our app assests
+# rev 0.0.0
+# last update: May 13, 2013 12:00PM
+
+NETWORK:
+*
+
+CACHE:
+# HTML
+/
+index.html
+
+# JS Lib
+custom-js/libs/bootstrap/bootstrap.min.js
+custom-js/libs/filer.min.js
+custom-js/libs/jquery-1.7.2.min.js
+custom-js/libs/jquery.mobile-1.1.0.js
+custom-js/libs/lawnchair-0.6.1.js
+
+# JS our stuff
+custom-js/picturesque-api.js
+custom-js/picturesque-config.js
+custom-js/picturesque-data.js
+custom-js/picturesque-offline.js
+custom-js/picturesque-ui.js
+custom-js/picturesque-utils.js
+
+# CSS
+custom-css/app-style.css
+custom-css/bootstrap.css
+custom-css/custom.css
+custom-css/jquery.mobile.structure-1.1.0.css
+custom-css/jquery.mobile.theme-1.1.0.css
+
+# CSS Images
+custom-css/images/ajax-loader.gif
+custom-css/images/ajax-loader.png
+custom-css/images/glyphicons-halflings-white.png
+custom-css/images/glyphicons-halflings.png
+custom-css/images/icons-18-black.png
+custom-css/images/icons-18-white.png
+custom-css/images/icons-36-black.png
+custom-css/images/icons-36-white.png
+custom-css/images/loader.gif
+custom-css/images/spinner_black_16.png
+
+# Slides Images
+custom-images/cloud_endpoints_logo.png

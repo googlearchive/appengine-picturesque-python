@@ -1,0 +1,213 @@
+/* This can be removed */
+.rightImg {
+  position: relative;
+  bottom: 12em;
+  right: 1em;
+}
+
+.modernApps {
+  position: absolute;
+  right: 20px;
+  bottom: -35px;
+}
+
+.lickBowlImg {
+  position: absolute;
+  right: 20px;
+  bottom: -35px;
+}
+
+.hercoImg {
+  position: absolute;
+  right: 50px;
+  bottom: -100px;
+}
+
+.angularImg {
+  position: relative;
+  bottom: 6em;
+  right: 1em;
+}
+.autoOffline {
+  position: relative;
+  bottom: 11em;
+}
+
+.biggerFont {
+  font-size: 140%;
+}
+
+.biggerFont > ul > li {
+  margin-top: 1em;
+}
+
+span.emphatic {
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Just a copy of what is above */
+pre.highlighted-code > * {
+  opacity: 0.80;
+  -webkit-transition: opacity 0.5s ease-in;
+  -moz-transition: opacity 0.5s ease-in;
+  -o-transition: opacity 0.5s ease-in;
+  transition: opacity 0.5s ease-in;
+}
+/* line 368, ../scss/default.scss */
+pre.highlighted-code b {
+  opacity: 1;
+}
+
+label.perf {
+  background-color: #0da861;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+label.color {
+  padding: 5px 10px;
+  border-radius: 10px;
+  color: white;
+  margin-right: 10px;
+}
+.weavebg{
+  background:-webkit-linear-gradient(63deg, #141414 5px, rgba(0,0,0,0) 5px) 0 5px,-webkit-linear-gradient(243deg, #141414 5px, rgba(0,0,0,0) 5px) 10px 0px,-webkit-linear-gradient(63deg, #212121 5px, rgba(0,0,0,0) 5px) 0px 10px,-webkit-linear-gradient(243deg, #212121 5px, rgba(0,0,0,0) 5px) 10px 5px,-webkit-linear-gradient(0deg, #1c1c1c 10px, rgba(0,0,0,0) 10px),-webkit-linear-gradient(#1c1c1c 25%, #1a1a1a 25%, #1a1a1a 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 75%, #242424 75%, #242424);
+  background:-moz-linear-gradient(63deg, #141414 5px, rgba(0,0,0,0) 5px) 0 5px,-moz-linear-gradient(243deg, #141414 5px, rgba(0,0,0,0) 5px) 10px 0px,-moz-linear-gradient(63deg, #212121 5px, rgba(0,0,0,0) 5px) 0px 10px,-moz-linear-gradient(243deg, #212121 5px, rgba(0,0,0,0) 5px) 10px 5px,-moz-linear-gradient(0deg, #1c1c1c 10px, rgba(0,0,0,0) 10px),-moz-linear-gradient(#1c1c1c 25%, #1a1a1a 25%, #1a1a1a 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 75%, #242424 75%, #242424);
+  background:-ms-linear-gradient(63deg, #141414 5px, rgba(0,0,0,0) 5px) 0 5px,-ms-linear-gradient(243deg, #141414 5px, rgba(0,0,0,0) 5px) 10px 0px,-ms-linear-gradient(63deg, #212121 5px, rgba(0,0,0,0) 5px) 0px 10px,-ms-linear-gradient(243deg, #212121 5px, rgba(0,0,0,0) 5px) 10px 5px,-ms-linear-gradient(0deg, #1c1c1c 10px, rgba(0,0,0,0) 10px),-ms-linear-gradient(#1c1c1c 25%, #1a1a1a 25%, #1a1a1a 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 75%, #242424 75%, #242424);
+  background-color:#121212;
+  -webkit-background-size:20px 20px;
+  -moz-background-size:20px 20px;
+  -o-background-size:20px 20px;
+  background-size:20px 20px
+}
+
+
+.relsessions {
+  line-height: 28px;
+}
+
+.cloudServerImg {
+  position: relative;
+  bottom: 13.5em;
+  left: 15em;
+  opacity: 0.8;
+  border-radius: 15px;
+}
+
+.boldItem {
+  background-color: yellow;
+  font-weight: bold;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+
+
+
+
+/* BORROWED THESE FROM PAUL KINLAN: */
+/* NOT USING COMPASS/SCSS SINCE THIS */
+/* INTRODUCES OTHER CONFLICTS */
+
+/* line 131, ../scss/default.scss */
+slides > slide.blue {
+  background: #4387fd !important;
+  color: white;
+}
+
+/* line 135, ../scss/default.scss */
+slides > slide.blue q {
+  font-size: 128px;
+  line-height: 1;
+  color: white;
+}
+/* line 141, ../scss/default.scss */
+slides > slide.blue h1 {
+  color: white;
+}
+/* line 145, ../scss/default.scss */
+slides > slide.blue q:before {
+  content: "";
+}
+/* line 148, ../scss/default.scss */
+slides > slide.blue q:after {
+  content: "";
+}
+/* line 153, ../scss/default.scss */
+slides > slide.red {
+  background: #f44a3f !important;
+  color: white;
+}
+/* line 157, ../scss/default.scss */
+slides > slide.red q {
+  font-size: 128px;
+  line-height: 1;
+  color: white;
+}
+/* line 163, ../scss/default.scss */
+slides > slide.red h1 {
+  color: white;
+}
+/* line 167, ../scss/default.scss */
+slides > slide.red q:before {
+  content: "";
+}
+/* line 170, ../scss/default.scss */
+slides > slide.red q:after {
+  content: "";
+}
+/* line 175, ../scss/default.scss */
+slides > slide.green {
+  background: #0da861 !important;
+  color: white;
+}
+/* line 179, ../scss/default.scss */
+slides > slide.green q {
+  font-size: 128px;
+  line-height: 1;
+  color: white;
+}
+/* line 185, ../scss/default.scss */
+slides > slide.green h1 {
+  color: white;
+}
+/* line 189, ../scss/default.scss */
+slides > slide.green q:before {
+  content: "";
+}
+/* line 192, ../scss/default.scss */
+slides > slide.green q:after {
+  content: "";
+}
+/* line 197, ../scss/default.scss */
+slides > slide.transparent {
+  background: black !important;
+}
+/* line 200, ../scss/default.scss */
+slides > slide.transparent q {
+  font-size: 128px;
+  line-height: 1;
+  color: white;
+}
+/* line 206, ../scss/default.scss */
+slides > slide.transparent q:before {
+  content: "";
+}
+/* line 209, ../scss/default.scss */
+slides > slide.transparent q:after {
+  content: "";
+}
+
+
+.flexbox.twoimages {
+  flex-direction: row ;
+  flex-wrap: nowrap ;
+  justify-content: centere ;
+  align-content: flex-start;
+  align-items: baseline;
+}
+
+slides > slide:not(.nobackground):before {
+  content: "#io13 goo.gl/c9gt3";
+}
