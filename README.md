@@ -1,8 +1,8 @@
 # Picturesque
 
-"Picturesque" is an sample application used to demonstarte Cloud and Client
-best practices at Google I/O 2013. For more information, see the [slides][13],
-the [Google I/O Session][14] or try out the [application][15]!
+"Picturesque" is a sample application used to demonstrate Cloud and Client
+best practices at [Google I/O 2013][23]. For more information, see the
+[slides][13], the [Google I/O Session][14] or try out the [application][15]!
 
 ## Project Setup, Installation, and Configuration
 
@@ -10,16 +10,17 @@ To check out the application, execute:
 ```
 git clone --recursive https://github.com/GoogleCloudPlatform/appengine-picturesque-python
 ```
-and all submodules will be clones as well.
+and all submodules will be cloned as well.
 
-To set up the application, you'll need to create a `settings.py` with your
-Client ID as well as a `custom-js/picturesque-config.js` file with the same
-data. Sample data is contained in the files `settings.py.example` and
-`custom-js/picturesque-config.js.example`.
+To set up the application, you'll need to create a `settings.py` file with
+your Client ID as well as a `custom-js/picturesque-config.js` file with
+the same data. Sample data and links are contained in the files
+[`settings.py.example`][24] and
+[`custom-js/picturesque-config.js.example`][25].
 
 To build the application after changes, run `python make_index.py` from the
-`html/` directory. This will require that you have [Jinja2][12] installed
-locally.
+[`html/`][26] directory. This will require that you have [Jinja2][12]
+installed locally.
 
 To populate the test data, use the [remote api][22]:
 
@@ -43,17 +44,17 @@ will also use the test user account you define in `settings.py`.
 
 ## Contributing changes
 
-*  See `CONTRIB.md`.
+*  See [`CONTRIB.md`][28].
 
 ## Licensing
 
-*  See `LICENSE`.
+*  See [`LICENSE`][27].
 *  **Note**: We use other libraries packaged with our application that
    are under different license:
    *  Twitter Bootstrap [License][17]
    *  jQuery [License][21]
    *  jQuery Mobile [License][18]
-   *  filer.js [License][19]
+   *  `filer.js` [License][19]
    *  Lawnchair [License][20]
 
 ## Products
@@ -101,3 +102,9 @@ will also use the test user account you define in `settings.py`.
 [20]: https://github.com/brianleroux/lawnchair/blob/master/LICENSE
 [21]: https://github.com/jquery/jquery/blob/master/MIT-LICENSE.txt
 [22]: https://developers.google.com/appengine/articles/remote_api
+[23]: https://developers.google.com/events/io/2013/
+[24]: https://github.com/GoogleCloudPlatform/appengine-picturesque-python/blob/master/settings.py.example
+[25]: https://github.com/GoogleCloudPlatform/appengine-picturesque-python/blob/master/custom-js/picturesque-config.js.example
+[26]: https://github.com/GoogleCloudPlatform/appengine-picturesque-python/tree/master/html
+[27]: https://github.com/GoogleCloudPlatform/appengine-picturesque-python/blob/master/LICENSE
+[28]: https://github.com/GoogleCloudPlatform/appengine-picturesque-python/blob/master/CONTRIB.md
