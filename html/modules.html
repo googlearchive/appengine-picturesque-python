@@ -13,6 +13,11 @@
 
 
 <script>
+// So the DOM is not scanned after loading plusone.js
+window.___gcfg = {
+  parsetags: 'explicit'
+};
+
 PicturesqueApp.api.loadGapi();
 // In case loadGapi fails, try again when coming back from being offline.
 // This will be fine since loadGapi is idempotent.
